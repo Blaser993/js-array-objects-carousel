@@ -90,12 +90,10 @@ activeSlide = document.querySelector(".slide")
 activeSlide.classList.add("active")
 
 
-let attivo
-attivo = 0
 
 
 
-console.log(attivo, " indice all'inizio");
+
 
 slide = document.getElementsByClassName("slide");
 // console.log(slides[attivo]);
@@ -105,9 +103,16 @@ let evaristo = document.getElementById("evaristo")
 let ernesto = document.getElementById("ernesto")
 
 
-clickErnesto();
+let attivo
 
-clickEvaristo();
+attivo = 0
+
+console.log(attivo, " indice all'inizio");
+
+
+addClickSx(evaristo);
+
+addClickDx(ernesto);
 
 
 
@@ -118,25 +123,34 @@ clickEvaristo();
 
 // FUNZIONI
 
-//aggiunge il click event ad un elemento
-function addClick(element) {
+// attribuisce ad un elemento la funzione di cambiare slide sx
+function addClickSx(element) {
     element.addEventListener("click",
     function() {
         console.log("mi hai cliccato")
+        clickSinistro()
+    })
+}
+
+
+function addClickDx(element) {
+    element.addEventListener("click",
+    function() {
+        console.log("mi hai cliccato")
+        clickDestro()
     })
 }
 
 
 // scorre le slide verso la sinistra (precedente)
-function clickEvaristo() {
-    addClick(evaristo);
-
+function clickSinistro() {
+    
     if (attivo === 0) {
         slide[attivo].classList.remove("active");
-        attivo = attivo + slide.length - 1;
+        attivo = attivo + slides.length - 1;
         slide[attivo].classList.add("active");
 
-    } else if (attivo <= slide.length - 1) {
+    } else if (attivo <= slides.length - 1) {
         slide[attivo].classList.remove("active");
         attivo = attivo - 1;
         slide[attivo].classList.add("active");
@@ -145,12 +159,11 @@ function clickEvaristo() {
 
 
 //scorre le slides verso la destra (successiva)
-function clickErnesto() {
-    addClick(ernesto);
-
-    if (attivo >= slide.length - 1) {
+function clickDestro() {
+     
+    if (attivo >= slides.length - 1) {
         slide[attivo].classList.remove("active");
-        attivo = attivo - (slide.length);
+        attivo = attivo - (slides.length);
         console.log(attivo);
     } else if (attivo == -1) {
         slide[attivo].classList.remove("active");
@@ -160,7 +173,7 @@ function clickErnesto() {
     }
 
     else
-        slide[attivo].classList.remove("active");
+    slide[attivo].classList.remove("active");
     attivo = attivo + 1;
     slide[attivo].classList.add("active");
 
