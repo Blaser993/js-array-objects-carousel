@@ -52,7 +52,7 @@ slides.forEach(element => {
             <img class="image" src= "${image}" alt="">
             <article>
                 <h1 class="title">${title}</h1>
-                <p class="text">${text}</p>
+                <p class="text hide">${text}</p>
             </article>
         </div>
         `
@@ -87,7 +87,7 @@ addClickDx(ernesto);
 
 // BONUS
 
-const clock = setInterval(clickDestro, 5000)
+const clock = setInterval(clickDestro, 8000)
 
 
 
@@ -148,7 +148,7 @@ function clickDestro() {
     slide[attivo].classList.add("active");
 
     console.log("cambio slide")
-    
+
 
 }
 

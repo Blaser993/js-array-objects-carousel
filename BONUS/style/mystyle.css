@@ -27,7 +27,7 @@ article{
     color: white;
     padding-right: 64px;
     padding-left: 20%;
-    padding-bottom: 24px;
+    padding-bottom: 36px;
 }
 
 img,
@@ -52,7 +52,7 @@ article{
     min-height: 8px;
     background-color: violet;
     animation-name: progresso;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -63,7 +63,13 @@ article{
 }
 
 
+.carusel:hover .hide{
+    display: block;
+}
 
+.hide{
+    display:none;
+}
 
 
 .active{
