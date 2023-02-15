@@ -3,7 +3,7 @@ console.log("nuovo carosello")
 const slides = [
     {
         image: "./img/01.webp",
-        title: "Marvel's Spiderman Miles Morale",
+        title: "Marvel's Spiderman Miles Morales",
         text: "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
     }, {
         image: "./img/02.webp",
@@ -25,6 +25,9 @@ const slides = [
 ];
 
 const [ slide1, slide2, slide3, slide4, slide5 ] = slides
+
+
+
 
 
 //console.log(slide1, slide4)
@@ -64,18 +67,26 @@ console.log(slides)
 slides.forEach(element => { 
 
     let htmlSlide = element
-    
+    const {image, title, text} = element
     
     for (let info in element){
+
         
-        console.log(element[info])
+        //console.log(element)
+       console.log(element[info])
     }
 
     htmlSlide = `
     <div class="slide active">
-        <img src="${srcImg}" alt="">
+        <img class="image" src= "${image}" alt="">
+        <article>
+            <h1 class="title">${title}</h1>
+            <p class="text">${text}</p>
+        </article>
     </div>
     `
+
+    carosello.innerHTML += htmlSlide
 
 });
 
