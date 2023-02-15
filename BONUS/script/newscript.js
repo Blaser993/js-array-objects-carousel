@@ -111,13 +111,11 @@ function() {
         
     } 
     
-    if (sensoOrario === false) {
+    if (sensoOrario != false) {
         sensoOrario = true
         vadoAvanti()
     } 
-
-    
-       
+      
 }) 
 
 
