@@ -87,11 +87,63 @@ addClickDx(ernesto);
 
 // BONUS
 
-const clock = setInterval(clickDestro, 8000)
+
+let sensoOrario
+
+console.log(sensoOrario)
+
+vadoAvanti();
+
+let reverse = document.getElementById("shuffle")
+
+sensoOrario = true
+
+reverse.addEventListener("click",
+function() {
+
+    
+    console.log("ho cambiato senso di marcia", sensoOrario)
+
+    if (sensoOrario === true){
+        
+        sensoOrario = false
+        vadoIndietro()
+        
+    } 
+    
+    if (sensoOrario === false) {
+        sensoOrario = true
+        vadoAvanti()
+    } 
+
+    
+       
+}) 
+
+
+
+
+
+
+
+
 
 
 
 // FUNZIONI
+
+function vadoAvanti() {
+    
+    const clock = setInterval(clickDestro, 8000);
+    console.log(clock);
+}
+
+function vadoIndietro() {
+    
+    const clock = setInterval(clickSinistro, 8000);
+    console.log(clock);
+}
+
 
 // attribuisce ad un elemento la funzione di cambiare slide sx
 function addClickSx(element) {
@@ -125,6 +177,10 @@ function clickSinistro() {
         attivo = attivo - 1;
         slide[attivo].classList.add("active");
     }
+    
+    console.log(sensoOrario)
+    console.log("vado indietro")
+    
 }
 
 
@@ -147,8 +203,10 @@ function clickDestro() {
     attivo = attivo + 1;
     slide[attivo].classList.add("active");
 
-    console.log("cambio slide")
-
+    
+    console.log(sensoOrario)
+    console.log("vado avanti")
+    
 
 }
 
