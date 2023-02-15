@@ -35,8 +35,6 @@ if(i === 0) {
 
 }
 
-
-
     carosello.innerHTML += htmlSlide
 
 
