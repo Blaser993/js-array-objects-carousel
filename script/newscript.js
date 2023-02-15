@@ -24,7 +24,7 @@ const slides = [
     }
 ];
 
-const [ slide1, slide2, slide3, slide4, slide5 ] = slides
+//const [ slide1, slide2, slide3, slide4, slide5 ] = slides
 
 
 
@@ -88,3 +88,55 @@ slides.forEach(element => {
 
 activeSlide = document.querySelector(".slide")
 activeSlide.classList.add("active")
+
+
+let attivo
+attivo = 0
+
+
+
+console.log(attivo, " indice all'inizio");
+
+slide = document.getElementsByClassName("slide");
+// console.log(slides[attivo]);
+
+document.getElementById("evaristo")
+
+let clickSinistro = evaristo.addEventListener("click", function(){
+    console.log("cambio alla precedente immagine");
+
+    if (attivo === 0){
+    slide[attivo].classList.remove("active")
+    attivo = attivo + slide.length-1
+    slide[attivo].classList.add("active")
+    } else if (attivo <= slide.length-1){
+        slide[attivo].classList.remove("active")
+        attivo = attivo - 1
+        slide[attivo].classList.add("active")
+    }
+
+});
+
+
+document.getElementById("ernesto")
+
+let clickDestro = ernesto.addEventListener("click", function(){
+    console.log("cambio alla seguente immagine");
+
+
+    if (attivo >= slide.length-1){
+        slide[attivo].classList.remove("active")
+        attivo =  attivo - (slide.length)       
+        console.log(attivo)
+    } else if (attivo == -1){
+        slide[attivo].classList.remove("active")
+        attivo = 0
+        console.log(attivo)
+        slide[attivo].classList.add("active")
+    } else
+
+    slide[attivo].classList.remove("active")
+    attivo = attivo + 1
+    slide[attivo].classList.add("active")
+
+});
