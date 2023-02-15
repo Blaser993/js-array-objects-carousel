@@ -62,10 +62,20 @@ const carosello = document.querySelector(".image-wrapper")
 console.log(slides)
 
 slides.forEach(element => { 
+
+    let htmlSlide = element
+    
     
     for (let info in element){
+        
         console.log(element[info])
     }
+
+    htmlSlide = `
+    <div class="slide active">
+        <img src="${srcImg}" alt="">
+    </div>
+    `
 
 });
 

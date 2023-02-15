@@ -11,12 +11,23 @@ body{
 img{
 
     display: block;
-    min-width: 100%;
+    max-width: 100%;
     aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+article{
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    color: white;
+    padding-right: 24px;
+    padding-left: 20%;
 }
 
 .slide{
     display:none;
+    position: relative;
 }
 
 
