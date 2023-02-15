@@ -100,43 +100,69 @@ console.log(attivo, " indice all'inizio");
 slide = document.getElementsByClassName("slide");
 // console.log(slides[attivo]);
 
-document.getElementById("evaristo")
+let evaristo = document.getElementById("evaristo")
 
-let clickSinistro = evaristo.addEventListener("click", function(){
-    console.log("cambio alla precedente immagine");
+let ernesto = document.getElementById("ernesto")
 
-    if (attivo === 0){
-    slide[attivo].classList.remove("active")
-    attivo = attivo + slide.length-1
-    slide[attivo].classList.add("active")
-    } else if (attivo <= slide.length-1){
-        slide[attivo].classList.remove("active")
-        attivo = attivo - 1
-        slide[attivo].classList.add("active")
+
+clickErnesto();
+
+clickEvaristo();
+
+
+
+
+
+
+
+
+// FUNZIONI
+
+//aggiunge il click event ad un elemento
+function addClick(element) {
+    element.addEventListener("click",
+    function() {
+        console.log("mi hai cliccato")
+    })
+}
+
+
+// scorre le slide verso la sinistra (precedente)
+function clickEvaristo() {
+    addClick(evaristo);
+
+    if (attivo === 0) {
+        slide[attivo].classList.remove("active");
+        attivo = attivo + slide.length - 1;
+        slide[attivo].classList.add("active");
+
+    } else if (attivo <= slide.length - 1) {
+        slide[attivo].classList.remove("active");
+        attivo = attivo - 1;
+        slide[attivo].classList.add("active");
+    }
+}
+
+
+//scorre le slides verso la destra (successiva)
+function clickErnesto() {
+    addClick(ernesto);
+
+    if (attivo >= slide.length - 1) {
+        slide[attivo].classList.remove("active");
+        attivo = attivo - (slide.length);
+        console.log(attivo);
+    } else if (attivo == -1) {
+        slide[attivo].classList.remove("active");
+        attivo = 0;
+        console.log(attivo);
+        slide[attivo].classList.add("active");
     }
 
-});
+    else
+        slide[attivo].classList.remove("active");
+    attivo = attivo + 1;
+    slide[attivo].classList.add("active");
 
+}
 
-document.getElementById("ernesto")
-
-let clickDestro = ernesto.addEventListener("click", function(){
-    console.log("cambio alla seguente immagine");
-
-
-    if (attivo >= slide.length-1){
-        slide[attivo].classList.remove("active")
-        attivo =  attivo - (slide.length)       
-        console.log(attivo)
-    } else if (attivo == -1){
-        slide[attivo].classList.remove("active")
-        attivo = 0
-        console.log(attivo)
-        slide[attivo].classList.add("active")
-    } else
-
-    slide[attivo].classList.remove("active")
-    attivo = attivo + 1
-    slide[attivo].classList.add("active")
-
-});
