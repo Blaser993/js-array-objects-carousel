@@ -71,26 +71,20 @@ slides.forEach(element => {
     
     for (let info in element){
 
-        
+        htmlSlide = `
+        <div class="slide">
+            <img class="image" src= "${image}" alt="">
+            <article>
+                <h1 class="title">${title}</h1>
+                <p class="text">${text}</p>
+            </article>
+        </div>
+        `
         //console.log(element)
-       console.log(element[info])
+       //console.log(element[info])
     }
-
-    htmlSlide = `
-    <div class="slide active">
-        <img class="image" src= "${image}" alt="">
-        <article>
-            <h1 class="title">${title}</h1>
-            <p class="text">${text}</p>
-        </article>
-    </div>
-    `
-
-    
-
     carosello.innerHTML += htmlSlide
-
-    activeSlide = document.querySelector(".slide")
-    activeSlide.classList.add("active")
 });
 
+activeSlide = document.querySelector(".slide")
+activeSlide.classList.add("active")
