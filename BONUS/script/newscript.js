@@ -87,7 +87,7 @@ addClickDx(ernesto);
 
 // BONUS
 
-const clock = setInterval(clickDestro, 3000)
+const clock = setInterval(clickDestro, 5000)
 
 
 
@@ -146,6 +146,9 @@ function clickDestro() {
     slide[attivo].classList.remove("active");
     attivo = attivo + 1;
     slide[attivo].classList.add("active");
+
+    console.log("cambio slide")
+    
 
 }
 

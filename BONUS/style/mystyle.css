@@ -51,8 +51,18 @@ article{
 .progression{
     min-height: 8px;
     background-color: violet;
-    width:1%;
+    animation-name: progresso;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
+
+@keyframes progresso {
+    0%  {width:0%}
+    100%  {width:100%}
+}
+
+
 
 
 
