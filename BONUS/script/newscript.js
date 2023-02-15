@@ -87,7 +87,7 @@ addClickDx(ernesto);
 
 // BONUS
 
-
+const clock = setInterval(clickDestro, 3000)
 
 
 
