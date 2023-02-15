@@ -86,7 +86,11 @@ slides.forEach(element => {
     </div>
     `
 
+    
+
     carosello.innerHTML += htmlSlide
 
+    activeSlide = document.querySelector(".slide")
+    activeSlide.classList.add("active")
 });
 
