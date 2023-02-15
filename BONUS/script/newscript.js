@@ -45,8 +45,8 @@ slides.forEach(element => {
     
     for (let info in element){
 
-        htmlSlide = `
-
+        htmlSlide =
+        `
         <div class="slide">
             
             <img class="image" src= "${image}" alt="">
