@@ -55,7 +55,7 @@ article{
     min-height: 8px;
     background-color: white;
     animation-name: progresso;
-    animation-duration: 8s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }

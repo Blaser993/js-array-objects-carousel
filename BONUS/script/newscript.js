@@ -80,43 +80,64 @@ attivo = 0
 console.log(attivo, " indice all'inizio");
 
 
-addClickSx(evaristo);
 
-addClickDx(ernesto);
 
 
 // BONUS
 
-
 let sensoOrario
+sensoOrario = true
 
-console.log(sensoOrario)
 
-vadoAvanti();
+let carusel = document.querySelector(".carusel")
+
+let autoplay = setInterval(direction,3000)
+
+carusel.addEventListener("mouseenter", () => {
+
+    clearInterval(autoplay)
+    autoplay = undefined
+})
+
+carusel.addEventListener("mouseleave", () => {
+
+    
+    autoplay = setInterval(direction,3000)
+})
+
+
+
+
+
+// cambio il senso del cambio
 
 let reverse = document.getElementById("shuffle")
 
-sensoOrario = true
+
+direzione = "1"
+
+
+console.log(sensoOrario)
 
 reverse.addEventListener("click",
-function() {
-
-    
+function(){
     console.log("ho cambiato senso di marcia", sensoOrario)
 
-    if (sensoOrario === true){
-        
-        sensoOrario = false
-        vadoIndietro()
-        
-    } 
-    
-    if (sensoOrario != false) {
-        sensoOrario = true
-        vadoAvanti()
-    } 
-      
-}) 
+    if (direzione === "1"){
+        direzione = "0"
+    } else direzione = "1"
+
+    direction();
+
+
+
+})
+
+
+
+
+
+
 
 
 
@@ -130,17 +151,7 @@ function() {
 
 // FUNZIONI
 
-function vadoAvanti() {
-    
-    const clock = setInterval(clickDestro, 8000);
-    console.log(clock);
-}
 
-function vadoIndietro() {
-    
-    const clock = setInterval(clickSinistro, 8000);
-    console.log(clock);
-}
 
 
 // attribuisce ad un elemento la funzione di cambiare slide sx
@@ -208,3 +219,13 @@ function clickDestro() {
 
 }
 
+function direction() {
+    switch (direzione) {
+        case "1":
+            clickDestro();
+            break;
+        case "0":
+            clickSinistro();
+            break;
+    }
+}
