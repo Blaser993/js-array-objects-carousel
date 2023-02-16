@@ -200,8 +200,7 @@ function clickDestro() {
 
     
     
-    console.log("vado avanti")
-    
+    console.log("vado avanti")  
 
 }
 
@@ -228,7 +227,8 @@ function changeDirection() {
             } else
                 direzione = "1";
 
-            direction();
+            
 
         });
+        direction();
 }
