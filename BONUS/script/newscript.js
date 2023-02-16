@@ -116,17 +116,8 @@ direzione = "1" //verso destra, direzione ="0" -> verso sinistra
 
 
 
-reverse.addEventListener("click",
-function(){
-    console.log("ho cambiato senso di marcia")
+changeDirection(reverse);
 
-    if (direzione === "1"){
-        direzione = "0"
-    } else direzione = "1"
-
-    direction();
-
-})
 
 
 
@@ -215,7 +206,6 @@ function clickDestro() {
 }
 
 //decide il senso dell'autoplay
-
 function direction() {
     switch (direzione) {
         case "1":
@@ -225,4 +215,20 @@ function direction() {
             clickSinistro();
             break;
     }
+}
+
+// cambia il verso di marcia del carosello
+function changeDirection() {
+    reverse.addEventListener("click",
+        function () {
+            console.log("ho cambiato senso di marcia");
+
+            if (direzione === "1") {
+                direzione = "0";
+            } else
+                direzione = "1";
+
+            direction();
+
+        });
 }

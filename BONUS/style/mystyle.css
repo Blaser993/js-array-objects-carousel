@@ -41,18 +41,18 @@ li{
 }
 
 
-.boble{
+.boble img{
     border: 1px solid white;
     display: block;
-    max-width: 128px;
+    max-width: 80px;
     aspect-ratio: 1;
     object-fit:cover;
     filter:brightness(1.1) grayscale(1)  ;
     border-radius: 999px;
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
-.boble-active{
+.boble-active img{
     box-shadow: 0px 0px 0px;
     filter:grayscale(0);
 }
@@ -109,10 +109,7 @@ article{
    animation-duration: 3s;
 }
 
-@keyframes reset {
-    0% {width: 0%;}
-    100% {width:0%}
-}
+
 
 .carusel:hover .hide{
     display: block;
