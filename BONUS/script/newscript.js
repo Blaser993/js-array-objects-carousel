@@ -72,7 +72,6 @@ let evaristo = document.getElementById("evaristo")
 
 let ernesto = document.getElementById("ernesto")
 
-
 let attivo
 
 attivo = 0
@@ -84,10 +83,6 @@ console.log(attivo, " indice all'inizio");
 
 
 // BONUS
-
-let sensoOrario
-sensoOrario = true
-
 
 let carusel = document.querySelector(".carusel")
 
@@ -109,7 +104,7 @@ carusel.addEventListener("mouseleave", () => {
 
 
 
-// cambio il senso del cambio
+// cambio il senso di direzione dell'autoplay
 
 let reverse = document.getElementById("shuffle")
 
@@ -117,19 +112,17 @@ let reverse = document.getElementById("shuffle")
 direzione = "1"
 
 
-console.log(sensoOrario)
+
 
 reverse.addEventListener("click",
 function(){
-    console.log("ho cambiato senso di marcia", sensoOrario)
+    console.log("ho cambiato senso di marcia")
 
     if (direzione === "1"){
         direzione = "0"
     } else direzione = "1"
 
     direction();
-
-
 
 })
 
@@ -187,7 +180,7 @@ function clickSinistro() {
         slide[attivo].classList.add("active");
     }
     
-    console.log(sensoOrario)
+    
     console.log("vado indietro")
     
 }
@@ -213,11 +206,13 @@ function clickDestro() {
     slide[attivo].classList.add("active");
 
     
-    console.log(sensoOrario)
+    
     console.log("vado avanti")
     
 
 }
+
+//decide il senso dell'autoplay
 
 function direction() {
     switch (direzione) {
