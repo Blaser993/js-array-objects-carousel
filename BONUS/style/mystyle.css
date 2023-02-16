@@ -10,7 +10,7 @@ body{
 }
 
 img{
-
+    border: 20px solid white;
     display: block;
     width: 100%;
     aspect-ratio: 16/9;
@@ -65,6 +65,16 @@ article{
     100%  {width:100%}
 }
 
+.carusel:hover .progression{
+   animation-name: reset;
+   animation-duration: 3s;
+}
+
+@keyframes reset {
+    0% {width: 0%;}
+    100% {width:0%}
+}
+
 .carusel:hover .hide{
     display: block;
 }
@@ -78,6 +88,8 @@ article{
     padding-bottom: 24px;
    font-size: 2.5rem;
 }
+
+
 
 .hide{
     display:none;
