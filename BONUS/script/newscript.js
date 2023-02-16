@@ -79,7 +79,9 @@ attivo = 0
 console.log(attivo, " indice all'inizio");
 
 
+addClickDx(ernesto)
 
+addClickSx(evaristo)
 
 
 // BONUS
@@ -90,13 +92,14 @@ let autoplay = setInterval(direction,3000)
 
 carusel.addEventListener("mouseenter", () => {
 
+    console.log("ti blocco l'autoplay")
     clearInterval(autoplay)
     autoplay = undefined
 })
 
 carusel.addEventListener("mouseleave", () => {
 
-    
+    console.log("ti resetto l'autoplay")
     autoplay = setInterval(direction,3000)
 })
 
