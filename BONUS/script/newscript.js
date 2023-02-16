@@ -76,7 +76,6 @@ let attivo
 
 attivo = 0
 
-console.log(attivo, " indice all'inizio");
 
 
 addClickDx(ernesto)
@@ -112,7 +111,7 @@ carusel.addEventListener("mouseleave", () => {
 let reverse = document.getElementById("shuffle")
 
 
-direzione = "1"
+direzione = "1" //verso destra, direzione ="0" -> verso sinistra
 
 
 
